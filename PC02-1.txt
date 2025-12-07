@@ -1,0 +1,21 @@
+import 'package:flutter/material.dart';
+
+class ResizePaddingTestCase extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      resizeToAvoidBottomPadding: true, // Avoid bottom overflow (old property)
+      appBar: AppBar(title: Text("Test Case 1")),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            TextField(),
+            SizedBox(height: 20),
+            Text("This screen avoids bottom overflow when keyboard opens"),
+          ],
+        ),
+      ),
+    );
+  }
+}
